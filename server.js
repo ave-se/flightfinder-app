@@ -26,6 +26,10 @@ app.get('/', (req, res) => {
   res.send('FlightFinder API is running');
 });
 
+// Import and use flight routes
+const flightRoutes = require('./routes/flights');
+app.use('/flights', flightRoutes);
+
 // Start the server
 app.listen(PORT, () => {
   console.log(`Server is running on port ${PORT}`);
